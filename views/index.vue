@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <h1>Gallery Listing</h1>
     <ul>
       <li v-for="gallery in galleries">

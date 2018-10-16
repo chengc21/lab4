@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="container-fluid">
     <h1>Object Details</h1>
 
       <!-- table of info about object -->
-      <table style="width:100%">
+      <table style="width:100%" class="table">
         <tr>
           <th>Title</th>
           <th>Description</th>

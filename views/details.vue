@@ -27,29 +27,17 @@
         </li>
       </ul>
 
-      <form>
+      <form :action="`/object/${object_id}/comment`">
           <!-- comment submission box -->
           <div class="form-group">
             <label for="comment">Add comment:</label>
             <textarea class="form-control" rows="5" id="comment"></textarea>
           </div>
-      <button v-on:click="submit_comment" type="button" class="btn btn-primary">Submit</button>  <!-- from https://stackoverflow.com/questions/7803814/prevent-refresh-of-page-when-button-inside-form-clicked -->
+      <button v-on:click="submit_comment(object_id)" type="button" class="btn btn-primary">Submit</button>  <!-- from https://stackoverflow.com/questions/7803814/prevent-refresh-of-page-when-button-inside-form-clicked -->
       </form>
       <ul>
       </ul>
 
-<!--
-      <script type="text/javascript">
-          function submit_comment() {
-              // takes the value of the comment in the textbox, submits it, and adds it to the comments list
-              fetch(`/object/${object_id}/${encodeURIComponent(document.getElementById("comment").value)}`) // from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
-              .then(document.getElementById("comments_list").innerHTML += `<li>${document.getElementById("comment").value}</li>`);
-
-                /submit_comment/:object_id/:comment"
-                /object/:object_id/:comment
--->
-
-      </script>
 
   </div>
 </template>
@@ -62,7 +50,9 @@ export default {
     }
     ,
     methods: {
-    submit_comment: function (event)  {
+    submit_comment: function (object_id)  {
+    console.log("hiii")
+    console.log(object_id)
     fetch(`/object/${object_id}/${encodeURIComponent(document.getElementById("comment").value)}`) // from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
     .then(document.getElementById("comments_list").innerHTML += `<li>${document.getElementById("comment").value}</li>`);
     }

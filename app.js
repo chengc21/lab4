@@ -75,12 +75,14 @@ app.get('/object/:object_id', (req, res) => {
 
 
 // Comment on object
-app.get('/object/:object_id/:comment', (req, res) => {
+app.get('/object/:object_id/comment', (req, res) => {
   if (comments[req.params.object_id]) {
       comments[req.params.object_id].push(req.params.comment);
+      console.log(hi);
   } else {
-      comments[req.params.object_id] = []
+      comments[req.params.object_id] = [];
       comments[req.params.object_id].push(req.params.comment);
+      console.log(hi);
   }
 });
 

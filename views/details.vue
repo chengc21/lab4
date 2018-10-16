@@ -16,7 +16,7 @@
           <td>{{detail.description}}</td>
           <td>{{detail.provenance}}</td>
           <td>{{detail.accessionyear}}</td>
-          <td><img style="max-height:300px;" width="100%" :src="`${detail.primaryimageurl}`"></td>
+          <td><img style="max-height:300px;" width="100%" :src="`${detail.primaryimageurl}`" v-if="detail.primaryimageurl"></td>
         </tr>
       </table>
 
